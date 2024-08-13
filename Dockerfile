@@ -1,18 +1,5 @@
-FROM maven:3.9.7-amazoncorretto-17 AS build
-
-COPY src /app/src
-COPY pom.xml /app
-
+FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
-
-RUN mvn clean install
-
-FROM amazoncorretto:17-alpine-jdk
-
-COPY --from=build /app/target/api_zap-0.0.1.jar /app/app.jar
-
-WORKDIR /app
-
+COPY /target/api_zap-0.0.1.jar api_zap-0.0.1.jar
 EXPOSE 8080
-
-CMD ["java", "-jar", "app.jar"]
+CMD ["java","-jar","api_zap-0.0.1.jar"]
