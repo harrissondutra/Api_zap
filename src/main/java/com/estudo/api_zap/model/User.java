@@ -2,6 +2,7 @@ package com.estudo.api_zap.model;
 
 import com.estudo.api_zap.DTO.UserDto;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,8 +23,11 @@ public class User {
     @Id
     @GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
     private UUID id;
+    @NotNull
     private String name;
+    @NotNull
     private String email;
+    @NotNull
     private String password;
 
 
