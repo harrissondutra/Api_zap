@@ -3,6 +3,7 @@ package com.estudo.api_zap.configuration.swagger;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,11 +23,18 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public GroupedOpenApi userApi() {
+    public GroupedOpenApi api() {
         return GroupedOpenApi.builder()
-                .group("user")
-                .pathsToMatch("/user/**")  // Inclui apenas endpoints no caminho /user
+                .group("api")
+                .packagesToScan("com.estudo.api_zap.controller")  // Ajuste o pacote base dos controllers
                 .build();
+    }
+
+    @Bean
+    public OpenApiCustomizer customizer() {
+        return openApi -> {
+            openApi.getComponents().getSchemas().remove("UnwantedModelName");  // Remover modelos indesejados
+        };
     }
 }
 
