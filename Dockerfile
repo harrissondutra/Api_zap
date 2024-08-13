@@ -1,10 +1,18 @@
-FROM ubuntu:latest
-LABEL authors="Harrisson Dutra"
+FROM maven:3.9.7-amazoncorretto-17 AS build
 
-FROM maven:3-eclipse-temurin:21-jdk-jammy AS build
-COPY . .
-RUN mvn clean package -Pprod -DskipTests
-FROM eclipse-temurin:21-jdk-jammy
-COPY --from=build /target/api_zap-0.0.1.jar app.jar
+COPY src /app/src
+COPY pom.xml /app
+
+WORKDIR /app
+
+RUN mvn clean install
+
+FROM amazoncorretto:17-alpine-jdk
+
+COPY --from=build /app/target/api_zap-0.0.1.jar /app/app.jar
+
+WORKDIR /app
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+
+CMD ["java", "-jar", "app.jar"]
