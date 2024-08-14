@@ -1,0 +1,10 @@
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\ApiZapApplication.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\configuration\SecurityConfig.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\configuration\swagger\SwaggerConfig.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\controller\UserController.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\DTO\UserDto.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\model\Chat.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\model\User.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\model\User_Chat.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\repository\UsuarioRepository.java
+E:\Documentos\Desenvolvimento\Java\api_zap\src\main\java\com\estudo\api_zap\service\UserService.java

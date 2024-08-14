@@ -1,0 +1,28 @@
+spring:
+  config:
+    import: optional:file:env.properties
+  application:
+    name: ${NAME_APP}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      platform: postgres
+  springdoc:
+    api-docs:
+      enabled: true
+      path: /v3/api-docs
+    swagger-ui:
+      enabled: true
+      path: /swagger-ui.html
