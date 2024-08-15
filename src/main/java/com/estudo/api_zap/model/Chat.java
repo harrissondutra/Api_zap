@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "chat", schema = "zap")
 @EnableJpaAuditing
@@ -16,7 +17,10 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String message;
+
+    @OneToMany(mappedBy = "chat", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Message> messages;
+
     private LocalDateTime time = LocalDateTime.now();
 
 
