@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.estudo.api_zap.ApiZapApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.891 s -- in com.estudo.api_zap.ApiZapApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.85 s -- in com.estudo.api_zap.ApiZapApplicationTests
