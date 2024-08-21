@@ -17,6 +17,10 @@ import java.util.Set;
 
 @Configuration
 public class SwaggerConfig {
+    String description = "Documentação da API Zap";
+    String name = "<strong>Harrisson Dutra</strong>";
+    String url = "https://apizap-production.up.railway.app";
+    String localhost = "http://localhost:8080";
 
     @Bean
     public OpenAPI customOpenAPI() {
@@ -24,7 +28,7 @@ public class SwaggerConfig {
                 .info(new Info()
                         .title("API Zap")
                         .version("v1")
-                        .description("Documentação da API Zap \n\nURL Base: https://apizap-production.up.railway.app")
+                        .description(description + " \n\n" + url + " \n\n" + "Desenvolvido por: " + name)
                         .termsOfService("http://swagger.io/terms/")
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")));
     }
